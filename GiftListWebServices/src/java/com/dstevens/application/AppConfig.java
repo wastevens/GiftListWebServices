@@ -7,7 +7,4 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc   
 @ComponentScan({"com.dstevens"}) 
 public class AppConfig {  
-	static {
-		System.out.println("Hello world " + AppConfig.class.toString());
-	}
 } 

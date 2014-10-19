@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloWorldController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public String showIndex() {
-    	return "Hello, world!";
+    	return "Hello, world 3";
     }
     
     
