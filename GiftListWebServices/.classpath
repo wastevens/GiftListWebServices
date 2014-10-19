@@ -4,5 +4,25 @@
 	<classpathentry kind="src" path="src/test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/default/aopalliance.jar"/>
+	<classpathentry kind="lib" path="lib/default/commons-lang3.jar"/>
+	<classpathentry kind="lib" path="lib/default/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/default/GiftList.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-aop.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-beans.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-context.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-core.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-expression.jar"/>
+	<classpathentry kind="lib" path="lib/default/spring-web.jar" sourcepath="lib/sources/spring-web-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/GiftListWebServices/lib/javadoc/spring-webmvc-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/default/spring-webmvc.jar" sourcepath="lib/sources/spring-webmvc-sources.jar"/>
+	<classpathentry kind="lib" path="lib/default/TheWheel.jar"/>
+	<classpathentry kind="lib" path="lib/testDefault/commons-lang3.jar"/>
+	<classpathentry kind="lib" path="lib/testDefault/mockito-all.jar"/>
+	<classpathentry kind="lib" path="lib/testDefault/TestUtilities.jar"/>
+	<classpathentry kind="lib" path="lib/default/javax.servlet-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
