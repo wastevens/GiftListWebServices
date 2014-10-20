@@ -11,7 +11,7 @@ public class HelloWorldController {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public String showIndex() {
-    	return "Hello, world 3";
+    	return "Hello, world 5";
     }
     
     

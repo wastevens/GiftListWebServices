@@ -7,7 +7,7 @@
 	<classpathentry kind="lib" path="lib/default/aopalliance.jar"/>
 	<classpathentry kind="lib" path="lib/default/commons-lang3.jar"/>
 	<classpathentry kind="lib" path="lib/default/commons-logging.jar"/>
-	<classpathentry kind="lib" path="lib/default/GiftList.jar"/>
+	<classpathentry kind="lib" path="lib/default/GiftList.jar" sourcepath="/GiftList"/>
 	<classpathentry kind="lib" path="lib/default/spring-aop.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-beans.jar"/>
 	<classpathentry kind="lib" path="lib/default/spring-context.jar"/>

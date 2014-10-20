@@ -14,7 +14,7 @@
     </publications>
     <dependencies>
         <dependency org="com.dstevens" name="TheWheel" rev="1.1.2" conf="default;sources"/>
-        <dependency org="com.dstevens" name="GiftList" rev="0.1.1" conf="default;sources"/>
+        <dependency org="com.dstevens" name="GiftList" rev="0.1.2" conf="default;sources"/>
         <dependency org="javax.servlet"       name="javax.servlet-api" rev="3.1.0"         conf="default;sources;javadoc"/>
         <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.4.3" conf="default;sources;javadoc"/>
         <dependency org="org.springframework" name="spring-web"        rev="4.1.1.RELEASE" conf="default;sources;javadoc"/>
