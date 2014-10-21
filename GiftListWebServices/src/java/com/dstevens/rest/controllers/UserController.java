@@ -1,5 +1,6 @@
 package com.dstevens.rest.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class UserController {
 		if (findUser.isPresent()) {
 			return findUser.get();
 		}
-		return new User(new UserIdentifier(333), "no user found");
+		throw new IllegalArgumentException("No user found with id " + id);
 	}
 	
     @RequestMapping(method = RequestMethod.POST)
@@ -40,6 +41,49 @@ public class UserController {
     public User createUser(@RequestParam("email") String email) {
 		return userRepository.createUser(email);
     }
+    
+    @RequestMapping(value="/{id}/friend", method = RequestMethod.POST)
+    @ResponseBody
+    public User addFriend(@PathVariable int id, @RequestParam("friendId") int friendId) {
+    	Optional<User> user = userRepository.findUser(new UserIdentifier(id));
+    	Optional<User> friend = userRepository.findUser(new UserIdentifier(friendId));
+    	if(user.isPresent()) {
+    		if (friend.isPresent()) {
+    			user.get().addFriend(new UserIdentifier(friendId));
+    			userRepository.saveUser(user.get());
+    		}
+    		return user.get();
+    	}
+    	throw new IllegalArgumentException("No user found with id " + id);
+    }
+    
+	@RequestMapping(value="/{id}/friend", method = RequestMethod.GET)
+	@ResponseBody
+	public List<UserIdentifier> getFriends(@PathVariable int id) {
+		Optional<User> user = userRepository.findUser(new UserIdentifier(id));
+		if (user.isPresent()) {
+			return user.get().getFriends();
+		}
+		throw new IllegalArgumentException("No user found with id " + id);
+	}
+	
+	@RequestMapping(value="/{id}/friend/{friendId}", method = RequestMethod.GET)
+	@ResponseBody
+	public User getFriends(@PathVariable int id, @PathVariable int friendId) {
+		Optional<User> user = userRepository.findUser(new UserIdentifier(id));
+		if (user.isPresent()) {
+			UserIdentifier friendIdentifier = new UserIdentifier(friendId);
+			if (user.get().getFriends().contains(friendIdentifier)) {
+				Optional<User> friend = userRepository.findUser(friendIdentifier);
+				if(friend.isPresent()) {
+					return friend.get();
+				}
+			}
+		}
+		throw new IllegalArgumentException("No user found with id " + id);
+	}
+    
+    
     
     
 }
