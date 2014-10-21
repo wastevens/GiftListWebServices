@@ -15,6 +15,7 @@ import com.dstevens.users.UserIdentifier;
 import com.dstevens.users.UserRepository;
 
 @RestController
+@RequestMapping(value="/user")
 public class UserController {
 
 	private final UserRepository userRepository;
@@ -24,7 +25,7 @@ public class UserController {
 		this.userRepository = userRepository;
 	}
 	
-	@RequestMapping(value="/user/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public User getUser(@PathVariable int id) {
 		Optional<User> findUser = userRepository.findUser(new UserIdentifier(id));
@@ -34,7 +35,7 @@ public class UserController {
 		return new User(new UserIdentifier(333), "no user found");
 	}
 	
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public User createUser(@RequestParam("email") String email) {
 		return userRepository.createUser(email);
